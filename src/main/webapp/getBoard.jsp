@@ -6,12 +6,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>게시글정보</title>
 
-<title>글 상세</title>
+	<%BoardVO vo =  (BoardVO)request.getAttribute("vo"); %>
 
+<script>
+function delch(){
+	var del_con = confirm("삭제하시겠습니까?");
+	if(del_con){
+		document.delfrm.action;
+	}else{
+		alert("빼액")
+	}
+	
+}
+</script>
 </head>
 <body>
-	<%BoardVO vo =  (BoardVO)request.getAttribute("vo"); %>
 				<center>
 					<h1>게시글 상세</h1>
 					<hr>
@@ -47,7 +58,11 @@
 				<div align="center"	width:100%	height:50px  margin:20px auto;>
 				<% if(session.getAttribute("id").equals(vo.getId())){%>
 					<a href="updateform.do?seq=<%=vo.getSeq() %>" >변경</a>&nbsp;&nbsp;&nbsp; 
-					<a href= "delete.do?seq=<%=vo.getSeq()%>" >삭제</a>&nbsp;&nbsp;&nbsp;<%} %>
+					<form name="delfrm" action="delete.do">
+					<input type="submit" value="삭제" onclick="delch()">
+					<input type="hidden" value="<%=vo.getSeq() %>" name="seq">
+					</form>
+					<%} %>
 					<a href="list.do" >목록</a>
 				</div>
 </body>

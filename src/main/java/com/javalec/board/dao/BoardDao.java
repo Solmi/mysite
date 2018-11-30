@@ -18,7 +18,6 @@ public class BoardDao {
 	}
 
 	public void write(BoardVO vo) {
-		System.out.println(vo.toString());
 		mybatis.update("BoardDao.write", vo);
 	}
 	

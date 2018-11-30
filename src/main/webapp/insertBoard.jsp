@@ -8,7 +8,6 @@
 
 </head>
 <body>
-						<%System.out.println(session.getAttribute("id")); %>
 				<center>
 					<h1>게시글 등록</h1>
 					<hr>
