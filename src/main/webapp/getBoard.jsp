@@ -9,7 +9,11 @@
 <title>게시글정보</title>
 
 	<%BoardVO vo =  (BoardVO)request.getAttribute("vo"); %>
-
+<style>
+/* 	div{ */
+/* 		background-color: #ebff00 */
+/* 	} */
+</style>
 <script>
 function delch(){
 	var del_con = confirm("삭제하시겠습니까?");
