@@ -5,10 +5,13 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>글 상세</title>
+
 </head>
+
+
 <body>
 	<%BoardVO vo = (BoardVO) request.getAttribute("vo"); %>
 				<center>
@@ -52,4 +55,6 @@
 					<a href="list.do" >목록</a>
 				</div>
 </body>
+
+
 </html>

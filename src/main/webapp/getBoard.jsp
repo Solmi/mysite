@@ -14,11 +14,19 @@
 function delch(){
 	var del_con = confirm("삭제하시겠습니까?");
 	if(del_con){
-		document.delfrm.action;
-	}else{
-		alert("빼액")
+		location.href = "delteform.do?seq="+<%=vo.getSeq()%>
 	}
 	
+}
+function modify(){
+	var mod_con = confirm("게시글 변경하시겠습니까?");
+	if(mod_con){
+		location.href ="updateform.do?seq="+<%=vo.getSeq()%>;
+	}
+	
+}
+function list_do(){
+		location.href ="list.do";
 }
 </script>
 </head>
@@ -57,13 +65,10 @@ function delch(){
 				</center>
 				<div align="center"	width:100%	height:50px  margin:20px auto;>
 				<% if(session.getAttribute("id").equals(vo.getId())){%>
-					<a href="updateform.do?seq=<%=vo.getSeq() %>" >변경</a>&nbsp;&nbsp;&nbsp; 
-					<form name="delfrm" action="delete.do">
-					<input type="submit" value="삭제" onclick="delch()">
-					<input type="hidden" value="<%=vo.getSeq() %>" name="seq">
-					</form>
+					<input type="button" value="변경" onclick="modify()">
+					<input type="button" value="삭제" onclick="delch()">
 					<%} %>
-					<a href="list.do" >목록</a>
+					<input type="button" value ="목록" onclick="list_do()">
 				</div>
 </body>
 </html>
