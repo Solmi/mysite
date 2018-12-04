@@ -5,7 +5,7 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
+<link rel="stylesheet" href="css/styles.css" type="text/css" charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>글 상세</title>
 
@@ -15,7 +15,7 @@
 <body>
 	<%BoardVO vo = (BoardVO) request.getAttribute("vo"); %>
 				<center>
-					<h1>게시글 수정</h1>
+					<h2>게시글 수정</h2>
 					<hr>
 					<form action="update.do" method="post">
 						<input type = "hidden" name ="seq" value="<%=vo.getSeq()%>">
@@ -52,7 +52,7 @@
 					<hr>
 				</center>
 				<div align="center"	width:100%	height:50px  margin:20px auto;>
-					<a href="list.do" >목록</a>
+					<a href="list.do" class="btn_a">목록</a>
 				</div>
 </body>
 

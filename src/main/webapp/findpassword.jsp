@@ -5,13 +5,14 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>새글등록</title>
+<link rel="stylesheet" href="css/styles.css" type="text/css" charset="utf-8" />
+<title>비밀번호찾기</title>
 
 </head>
 <body>
 
 				<center>
-					<h3>비밀번호 찾기</h3>
+					<h2>비밀번호 찾기</h2>
 					<hr>
 					<form action="findpassword.do" method="post" >
 						<table border="1" cellpadding="0" cellspacing="0" width="700">
@@ -27,11 +28,10 @@
 								</font></h2></td>
 							</tr>
 							<tr>
-								<td colspan="2" align="center"><input type="submit"
-									value="비밀번호찾기" /></td>
+								<td colspan="2" align="center"><input type="submit" class="btn100 rounded" value="비밀번호찾기" /></td>
 							</tr>
 						</table>
-						<a href="joinpage.jsp">[로그인페이지]</a>
+						<a href="joinpage.jsp" class="btn_a100 rounded">로그인페이지</a>
 					</form>
 					<hr>
 				</center>

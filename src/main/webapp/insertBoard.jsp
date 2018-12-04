@@ -6,10 +6,11 @@
 <head>
 <title>새글등록</title>
 
+<link rel="stylesheet" href="css/styles.css" type="text/css" charset="utf-8" />
 </head>
 <body>
 				<center>
-					<h1>게시글 등록</h1>
+					<h2>게시글 등록</h2>
 					<hr>
 					<form action="writeBoard.do" >
 						<input type="hidden" name ="cnt" value="0">
@@ -34,7 +35,7 @@
 
 							<tr>
 								<td colspan="2" align="center"><input type="submit"
-									value=" 새글 등록 " /></td>
+									class="btn80 rounded" value=" 새글 등록 " /></td>
 							</tr>
 						</table>
 					</form>
@@ -42,7 +43,7 @@
 				
 				</center>
 				<div align="center"	width:100%	height:50px  margin:20px auto;>
-						<a href="list.do" >목록</a>
+						<a href="list.do" class="btn_a rounded" >목록</a>
 				</div>
 
 </body>

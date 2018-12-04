@@ -17,38 +17,39 @@ public class UserController {
 	@Autowired
 	@Qualifier("userservice")
 	private UserService userservice;
-	
+
 	@RequestMapping("joininsert.do")
 	public String add(@ModelAttribute UserVO vo) {
 		userservice.insertuser(vo);
 		return "joinpage.jsp";
 	}
-	
+
 	@RequestMapping("join.do")
 	public String join(UserVO vo, HttpSession session) {
-		if(userservice.getuservo(vo)!=null) {
-		UserVO vo2 = userservice.getuservo(vo);
-		if(vo2.getPassword().equals(vo.getPassword())){
-			session.setAttribute("id", vo.getId());
-			session.setAttribute("password", vo.getPassword());
-			return "list.do";
-			
-		}else {
-			session.setAttribute("error", "비밀번호를 확인해주세요");
-			return "joinpage.jsp";
-		}
-		}else {
+		if (userservice.getuservo(vo) != null) {
+			UserVO vo2 = userservice.getuservo(vo);
+			if (vo2.getPassword().equals(vo.getPassword())) {
+				session.setAttribute("id", vo2.getId());
+				session.setAttribute("password", vo2.getPassword());
+				session.setAttribute("role", vo2.getRole());
+				return "list.do";
+
+			} else {
+				session.setAttribute("error", "비밀번호를 확인해주세요");
+				return "joinpage.jsp";
+			}
+		} else {
 			session.setAttribute("error", "없는아이디입니다");
 			return "joinpage.jsp";
 		}
-			
+
 	}
-	
+
 	@RequestMapping("findpassword.do")
 	public String findpw(UserVO vo, Model model) {
 		vo = userservice.getuservo(vo);
 		model.addAttribute("password", vo.getPassword());
 		return "findpassword.jsp";
 	}
-	
+
 }

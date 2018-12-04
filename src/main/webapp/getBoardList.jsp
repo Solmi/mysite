@@ -9,28 +9,32 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" href="css/styles.css" type="text/css" charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>글 목록</title>
 </head>
 <body>
 
-
 	<center>
-		<h1>게시판 목록</h1>
-		<h3>
-			<a href="logout.do">logout<a>
-		</h3>
+	<table width=700px>
+			<td align="right"><a href="logout.do" class="btn_a100_right rounded">logout</a></td>
+	</table>
+		<h2>게시판 목록</h2>
+		
+		
 
 		<!-- 검색 시작 -->
 		<form action="list.do" method="post">
 			<table border="1" cellpadding="0" cellspacing="0" width=700px>
 				<tr>
-					<td align="right"><select name="searchCondition">
+					<td align="right">
+					<select name="searchCondition">
 							<option value="title">제목
 							<option value="content">내용
-					</select> <input name="keyword" type="text" /> <input type="submit"
-						value="검색" /></td>
+					</select> 
+					<input name="keyword" type="text" />
+					<input type="submit" class="btn" value="검색" /></td>
 				</tr>
 			</table>
 		</form>
@@ -50,11 +54,11 @@
 			</tr>
 
 			<tr>
-				<td><%=vo.getSeq() %></td>
-				<td align="left"><a href="searchone.do?seq=<%=vo.getSeq()%>"><%=vo.getTitle() %></td>
-				<td><%=vo.getWriter() %></td>
-				<td><%=vo.getRegdate() %></td>
-				<td><%=vo.getCnt() %></td>
+				<td width="50px" align="middle"  ><%=vo.getSeq() %></td>
+				<td align="middle"><a href="searchone.do?seq=<%=vo.getSeq()%>"><%=vo.getTitle() %></a></td>
+				<td width="100px"><%=vo.getWriter() %></td>
+				<td width=180px><%=vo.getRegdate() %></td>
+				<td width=50px align="middle"><%=vo.getCnt() %></td>
 			</tr>
 
 		</table>
@@ -65,7 +69,7 @@
 
 		<br>
 		<div align="center" width:100%	height:50px margin:20pxauto;>
-			<a href="insertBoard.jsp">게시글 등록</a>&nbsp;&nbsp;&nbsp;
+			<a href="insertBoard.jsp" class="btn_a rounded">게시글 등록</a>&nbsp;&nbsp;&nbsp;
 		</div>
 	</center>
 

@@ -4,13 +4,14 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>새글등록</title>
+<link rel="stylesheet" href="css/styles.css" type="text/css" charset="utf-8" />
+<title>회원가입</title>
 
 </head>
 <body>
 
 				<center>
-					<h3>사용자 등록</h3>
+					<h2>사용자 등록</h2>
 					<hr>
 					<form action="joininsert.do">
 						<table border="1" cellpadding="0" cellspacing="0" width=700px>
@@ -35,8 +36,8 @@
 								</td>
 							</tr>
 							<tr>
-								<td colspan="2" align="center"><input type="submit"
-									value="사용자 등록" /></td>
+								<td colspan="2" align="center">
+								<input type="submit" class="btn80 rounded" value="사용자 등록" /></td>
 							</tr>
 						</table>
 					</form>

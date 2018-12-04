@@ -5,20 +5,17 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" href="css/styles.css" type="text/css" charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>게시글정보</title>
 
 	<%BoardVO vo =  (BoardVO)request.getAttribute("vo"); %>
-<style>
-/* 	div{ */
-/* 		background-color: #ebff00 */
-/* 	} */
-</style>
+
 <script>
 function delch(){
 	var del_con = confirm("삭제하시겠습니까?");
 	if(del_con){
-		location.href = "delteform.do?seq="+<%=vo.getSeq()%>
+		location.href = "delete.do?seq="+<%=vo.getSeq()%>
 	}
 	
 }
@@ -68,11 +65,12 @@ function list_do(){
 					<hr>
 				</center>
 				<div align="center"	width:100%	height:50px  margin:20px auto;>
-				<% if(session.getAttribute("id").equals(vo.getId())){%>
-					<input type="button" value="변경" onclick="modify()">
-					<input type="button" value="삭제" onclick="delch()">
+				<%String role = (String)session.getAttribute("role"); 
+				 if(session.getAttribute("id").equals(vo.getId())|| role.equals("admin") ){%>
+					<input type="button" value="변경" class="btn rounded" onclick="modify()">
+					<input type="button" value="삭제" class="btn rounded" onclick="delch()">
 					<%} %>
-					<input type="button" value ="목록" onclick="list_do()">
+					<input type="button" value ="목록" class="btn rounded" onclick="list_do()">
 				</div>
 </body>
 </html>
