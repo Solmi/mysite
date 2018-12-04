@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.javalec.board.service.BoardService;
 import com.javalec.board.vo.BoardVO;
@@ -39,7 +41,7 @@ public class BoardController {
 	}
 
 	@RequestMapping("writeBoard.do")
-	public String write(BoardVO vo) {
+	public String write(BoardVO vo){
 		boardservice.write(vo);
 		return "list.do";
 	}
